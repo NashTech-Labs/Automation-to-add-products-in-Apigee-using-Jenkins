@@ -1,0 +1,25 @@
+{
+    "name": "my-api-product",
+    "displayName": "My API Product",
+    "description": "This is a sample API product",
+    "access": ["public"],
+    "apiResources": ["/**"],
+    "approvalType": "auto",
+    "attributes": [
+      {
+        "name": "version",
+        "value": "1.0"
+      },
+      {
+        "name": "owner",
+        "value": "John Doe"
+      }
+    ],
+    "environments": ["test"],
+    "proxies": ["my-api-proxy"],
+    "quota": "1000",
+    "quotaInterval": "1",
+    "quotaTimeUnit": "day",
+    "scopes": []
+  }
+  
