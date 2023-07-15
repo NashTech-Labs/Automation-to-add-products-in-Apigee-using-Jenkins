@@ -1,6 +1,6 @@
 # Products in Apigee
 
-In Apigee, API products in Apigee are a core concept of the Apigee API management platform. They represent bundles or collections of APIs that are grouped together and made available to developers for consumption. API products define the access, usage limits, and capabilities of the APIs included in the product.
+API products in Apigee are a core concept of the Apigee API management platform. They represent bundles or collections of APIs that are grouped together and made available to developers for consumption. API products define the access, usage limits, and capabilities of the APIs included in the product.
 
 ## Create/Update Products in Apigee using Jenkins
 
