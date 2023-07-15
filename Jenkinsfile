@@ -77,6 +77,7 @@ properties([
     ])
 ])
 
+def selectedEnvs = params.ENVIRONMENT.split(',')
 def selectedProducts = params.PRODUCT_FILE_NAME.split(',')
 
 pipeline {
