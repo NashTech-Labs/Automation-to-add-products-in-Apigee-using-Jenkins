@@ -1,4 +1,4 @@
-def envList = ['dev-env', 'qa-env', 'qa1-env', 'ts-env', 'ts2-env', 'ts3-env', 'perf1-env', 'perf2-env']
+def envList = ['dev-env', 'qa-env']
 def orgList = ['APIGEE_ORGANISATION_NAME']
 
 // Parameters Separated with Separator
@@ -137,24 +137,7 @@ pipeline {
 
           for (envs in selectedEnvs) {
             for (products in selectedProducts) {
-              // List the product 
-              def product = "${products}"
-              def command = "$APIGEE_CLI_DIR/apigeecli products list -o ${params.ORGANISATION} -t ${env.TOKEN}"
-              // Run the command and capture the output
-              def output = sh(script: command, returnStdout: true).trim()
-
-              // Check if the product exists in the output
-              if (output.contains(product)) {
-
-                echo "Product $product exists."
                 sh "$APIGEE_CLI_DIR/apigeecli products import -o ${params.ORGANISATION} -t ${env.TOKEN} -f ${WORKSPACE}/${product}.json --upsert"
-              } else {
-                echo "Product $product does not exist!"
-                sh "$APIGEE_CLI_DIR/apigeecli products import -o ${params.ORGANISATION} -f ${WORKSPACE}/${product}.json"
-              }
-            }
-          }
-        }
       }
     }
   }
